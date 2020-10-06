@@ -9,7 +9,7 @@ class AppTest(TestCase):
             appl.menu()
             mocked_input.assert_called_with(appl.MENU_PROMPT)
 
-    def test_menu_prints_blogs(self):
+    def test_menu_calls_print_blogs(self):
         with patch('app.print_blogs') as mocked_print_blogs:
             with patch('builtins.input', return_value='q'):
                 appl.menu()
